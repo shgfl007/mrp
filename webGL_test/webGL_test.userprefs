@@ -1,0 +1,13 @@
+﻿<Properties>
+  <MonoDevelop.Ide.Workspace />
+  <MonoDevelop.Ide.Workbench ActiveDocument="../../../../SuperCourse/Assets/Scripts/health_bar_manager.cs">
+    <Files>
+      <File FileName="../../../../SuperCourse/Assets/Scripts/health_bar_manager.cs" Line="62" Column="91" />
+      <File FileName="../../../../SuperCourse/Assets/Scripts/Managers/HRManager.cs" Line="30" Column="1" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>
