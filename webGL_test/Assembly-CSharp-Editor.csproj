@@ -55,10 +55,10 @@
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
  <Reference Include="LeapCSharp.NET3.5">
- <HintPath>/Users/Hisashi/Documents/Ryerson/mrp/webGL_test/Assets/LeapCSharp.NET3.5.dll</HintPath>
+ <HintPath>/Users/Hisashi/Documents/Ryerson/mrp/mrp/webGL_test/Assets/LeapCSharp.NET3.5.dll</HintPath>
  </Reference>
  <Reference Include="LeapCSharp.NET3.5">
- <HintPath>/Users/Hisashi/Documents/Ryerson/mrp/webGL_test/Assets/LeapScripts/LeapCSharp.NET3.5.dll</HintPath>
+ <HintPath>/Users/Hisashi/Documents/Ryerson/mrp/mrp/webGL_test/Assets/LeapScripts/LeapCSharp.NET3.5.dll</HintPath>
  </Reference>
  <Reference Include="UnityEditor.Graphs">
  <HintPath>/Applications/Unity/Unity.app/Contents/Frameworks/Managed/UnityEditor.Graphs.dll</HintPath>
