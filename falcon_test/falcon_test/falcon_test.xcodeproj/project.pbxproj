@@ -6,11 +6,48 @@
 	objectVersion = 46;
 	objects = {
 
+/* Begin PBXFileReference section */
+		6360C5991AD2DC9E00E302DE /* falcon_test_cli.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = falcon_test_cli.cpp; sourceTree = "<group>"; };
+		6360C59A1AD2DC9E00E302DE /* FalconColorTest.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = FalconColorTest.cpp; sourceTree = "<group>"; };
+		6360C59B1AD2DC9E00E302DE /* FalconColorTest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FalconColorTest.h; sourceTree = "<group>"; };
+		6360C59C1AD2DC9E00E302DE /* FalconCubeTest.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = FalconCubeTest.cpp; sourceTree = "<group>"; };
+		6360C59D1AD2DC9E00E302DE /* FalconCubeTest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FalconCubeTest.h; sourceTree = "<group>"; };
+		6360C59E1AD2DC9E00E302DE /* FalconLoopTimeTest.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = FalconLoopTimeTest.cpp; sourceTree = "<group>"; };
+		6360C59F1AD2DC9E00E302DE /* FalconLoopTimeTest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FalconLoopTimeTest.h; sourceTree = "<group>"; };
+		6360C5A01AD2DC9E00E302DE /* FalconSphereTest.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = FalconSphereTest.cpp; sourceTree = "<group>"; };
+		6360C5A11AD2DC9E00E302DE /* FalconSphereTest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FalconSphereTest.h; sourceTree = "<group>"; };
+		6360C5A21AD2DC9E00E302DE /* FalconTestBase.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = FalconTestBase.cpp; sourceTree = "<group>"; };
+		6360C5A31AD2DC9F00E302DE /* FalconTestBase.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FalconTestBase.h; sourceTree = "<group>"; };
+		6360C5A41AD2DC9F00E302DE /* FalconWallTest.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = FalconWallTest.cpp; sourceTree = "<group>"; };
+		6360C5A51AD2DC9F00E302DE /* FalconWallTest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FalconWallTest.h; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
 /* Begin PBXGroup section */
 		6360C5911AD2DC2400E302DE = {
 			isa = PBXGroup;
 			children = (
+				6360C5981AD2DC9E00E302DE /* falcon_test_cli */,
 			);
+			sourceTree = "<group>";
+		};
+		6360C5981AD2DC9E00E302DE /* falcon_test_cli */ = {
+			isa = PBXGroup;
+			children = (
+				6360C5991AD2DC9E00E302DE /* falcon_test_cli.cpp */,
+				6360C59A1AD2DC9E00E302DE /* FalconColorTest.cpp */,
+				6360C59B1AD2DC9E00E302DE /* FalconColorTest.h */,
+				6360C59C1AD2DC9E00E302DE /* FalconCubeTest.cpp */,
+				6360C59D1AD2DC9E00E302DE /* FalconCubeTest.h */,
+				6360C59E1AD2DC9E00E302DE /* FalconLoopTimeTest.cpp */,
+				6360C59F1AD2DC9E00E302DE /* FalconLoopTimeTest.h */,
+				6360C5A01AD2DC9E00E302DE /* FalconSphereTest.cpp */,
+				6360C5A11AD2DC9E00E302DE /* FalconSphereTest.h */,
+				6360C5A21AD2DC9E00E302DE /* FalconTestBase.cpp */,
+				6360C5A31AD2DC9F00E302DE /* FalconTestBase.h */,
+				6360C5A41AD2DC9F00E302DE /* FalconWallTest.cpp */,
+				6360C5A51AD2DC9F00E302DE /* FalconWallTest.h */,
+			);
+			path = falcon_test_cli;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -59,7 +96,7 @@
 				6360C5971AD2DC2400E302DE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 /* End XCConfigurationList section */
 	};

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>55C13C69-A3F0-4955-8D77-F5CCD09C40BF</string>
+	<key>IDESourceControlProjectName</key>
+	<string>falcon_test</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>9E8BF4F3106E70AD6E0D8C75D98024EB635D53D0</key>
+		<string>https://github.com/shgfl007/mrp.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>falcon_test/falcon_test/falcon_test.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>9E8BF4F3106E70AD6E0D8C75D98024EB635D53D0</key>
+		<string>../../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/shgfl007/mrp.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>9E8BF4F3106E70AD6E0D8C75D98024EB635D53D0</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>9E8BF4F3106E70AD6E0D8C75D98024EB635D53D0</string>
+			<key>IDESourceControlWCCName</key>
+			<string>mrp</string>
+		</dict>
+	</array>
+</dict>
+</plist>
