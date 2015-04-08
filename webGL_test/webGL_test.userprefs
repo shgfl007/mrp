@@ -1,9 +1,10 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace />
-  <MonoDevelop.Ide.Workbench ActiveDocument="../../../../SuperCourse/Assets/Scripts/health_bar_manager.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/trans_camera.cs">
     <Files>
-      <File FileName="../../../../SuperCourse/Assets/Scripts/health_bar_manager.cs" Line="62" Column="91" />
-      <File FileName="../../../../SuperCourse/Assets/Scripts/Managers/HRManager.cs" Line="30" Column="1" />
+      <File FileName="Assets/Scripts/trans_camera.cs" Line="53" Column="46" />
+      <File FileName="Assets/Scripts/camera_manager.cs" Line="1" Column="1" />
+      <File FileName="Assets/switch_sphere.cs" Line="78" Column="4" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
