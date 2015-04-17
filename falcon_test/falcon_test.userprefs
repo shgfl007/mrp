@@ -1,8 +1,12 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\scripts\Haptics.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\scripts\falcon_to_mouse.cs">
     <Files>
-      <File FileName="Assets\scripts\Haptics.cs" Line="34" Column="1" />
+      <File FileName="Assets\scripts\falcon_test.cs" Line="158" Column="38" />
+      <File FileName="Assets\scripts\Haptics.cs" Line="95" Column="3" />
+      <File FileName="Assets\scripts\controll_falcon.cs" Line="1" Column="1" />
+      <File FileName="Assets\Sources\~ControlScripts\KeyboardOrbit.js" Line="1" Column="1" />
+      <File FileName="Assets\scripts\falcon_to_mouse.cs" Line="59" Column="22" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

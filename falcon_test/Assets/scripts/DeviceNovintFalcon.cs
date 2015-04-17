@@ -21,9 +21,9 @@ using System.IO;
 /// </summary>
 public class DeviceNovintFalcon : MonoBehaviour {
 	
-	#region 000.dll Variables
+	#region Falcon Wrapper.dll Variables
 	
-	const string falcon = "000.dll";
+	const string falcon = "Falcon Wrapper.dll";
 	
 	[DllImport(falcon)]
 	private static extern void StartHaptics();
@@ -112,9 +112,9 @@ public class DeviceNovintFalcon : MonoBehaviour {
 		// ã‚­ãƒ£ãƒ©ã‚¯ã‚¿ãƒ¼å‹•ä½œåˆ¶å¾¡
 		_charaMove();
 		
-		//gameObject.transform.position = new Vector3((float)GetXPos() * -2, (float)GetYPos() * 2, (float)GetZPos() * 2);
+		gameObject.transform.position = new Vector3((float)GetXPos() * -2, (float)GetYPos() * 2, (float)GetZPos() * 2);
 		
-		//Debug.Log(isButton0Down() + " , " + isButton1Down() + " , " + isButton2Down() + " , " + isButton3Down());
+		Debug.Log(isButton0Down() + " , " + isButton1Down() + " , " + isButton2Down() + " , " + isButton3Down());
 	}
 	
 	/// <summary>
@@ -124,7 +124,7 @@ public class DeviceNovintFalcon : MonoBehaviour {
 		// NovintFalconã®ã‚°ãƒªãƒƒãƒ—ã‚’ãƒ‡ãƒ•ã‚©ä½ç½®ã«æˆ»ã™
 		SetServo(new double[3] { SpeedX, SpeedY, SpeedZ });
 		SetServoPos(new double[3] { PosX, PosY, PosZ }, Strength);
-		//Debug.Log(GetServoPos());
+		Debug.Log(GetServoPos());
 	}
 	
 	/// <summary>
@@ -148,7 +148,7 @@ public class DeviceNovintFalcon : MonoBehaviour {
 	
 	private Vector3 __moveVector(Vector3 moveVector) {
 		return Charactor.transform.TransformDirection(
-			moveVector * Time.deltaTime * TranslationSensitivity);
+			-1* moveVector * Time.deltaTime * TranslationSensitivity);
 	}
 	
 	#endregion
@@ -160,7 +160,7 @@ public class DeviceNovintFalcon : MonoBehaviour {
 		StopHaptics();
 	}
 	public Vector3 GetServoPos() {
-		return new Vector3((float)GetXPos(), (float)GetYPos(), -(float)GetZPos());
+		return new Vector3(-(float)GetXPos(), -(float)GetYPos(), -(float)GetZPos());
 	}
 	
 	#endregion

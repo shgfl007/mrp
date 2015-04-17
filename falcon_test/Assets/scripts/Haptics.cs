@@ -6,7 +6,7 @@ using System.IO;
 
 public class Haptics : MonoBehaviour {
 
-	const string falcon = "Falcon Wrapper.dll";
+	const string falcon = "Falcon Wrapper_compiled.dll";
 
 	[DllImport(falcon)]
 	private static extern void StartHaptics();
@@ -92,8 +92,8 @@ public class Haptics : MonoBehaviour {
 	
 	void Update ()
 	{
-		//SetServo(new double[3]{0,0,-10});
-		//SetServoPos(new double[3]{ 0, 0, 0 }, 3.0 );
+		SetServo(new double[3]{0,0,-10});
+		SetServoPos(new double[3]{ 0, 0, 0 }, 3.0 );
 		
 		//gameObject.transform.position = new Vector3( (float)GetXPos()*-2, (float)GetYPos()*2, (float)GetZPos()*2 );
 		
