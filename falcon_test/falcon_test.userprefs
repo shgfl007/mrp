@@ -1,12 +1,16 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\scripts\falcon_to_mouse.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\scripts\new_falcon_test.cs">
     <Files>
-      <File FileName="Assets\scripts\falcon_test.cs" Line="158" Column="38" />
-      <File FileName="Assets\scripts\Haptics.cs" Line="95" Column="3" />
+      <File FileName="Assets\scripts\paint_new.cs" Line="106" Column="5" />
+      <File FileName="Assets\scripts\falcon_test.cs" Line="1" Column="1" />
+      <File FileName="Assets\scripts\Haptics.cs" Line="1" Column="1" />
       <File FileName="Assets\scripts\controll_falcon.cs" Line="1" Column="1" />
       <File FileName="Assets\Sources\~ControlScripts\KeyboardOrbit.js" Line="1" Column="1" />
-      <File FileName="Assets\scripts\falcon_to_mouse.cs" Line="59" Column="22" />
+      <File FileName="Assets\scripts\falcon_to_mouse.cs" Line="1" Column="1" />
+      <File FileName="Assets\scripts\new_falcon_test.cs" Line="1" Column="1" />
+      <File FileName="Assets\Sources\PaintVertices.js" Line="1" Column="1" />
+      <File FileName="Assets\mouse_test.cs" Line="21" Column="67" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

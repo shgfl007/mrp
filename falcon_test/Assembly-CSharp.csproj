@@ -55,12 +55,15 @@
      <Compile Include="Assets\Reporter\Test\Rotate.cs" />
      <Compile Include="Assets\Reporter\Test\TestReporter.cs" />
      <Compile Include="Assets\Sources\LightningBolt.cs" />
+     <Compile Include="Assets\mouse_test.cs" />
      <Compile Include="Assets\scripts\DeviceNovintFalcon.cs" />
      <Compile Include="Assets\scripts\Haptics.cs" />
      <Compile Include="Assets\scripts\controll_falcon.cs" />
      <Compile Include="Assets\scripts\debug_test.cs" />
      <Compile Include="Assets\scripts\falcon_test.cs" />
      <Compile Include="Assets\scripts\falcon_to_mouse.cs" />
+     <Compile Include="Assets\scripts\new_falcon_test.cs" />
+     <Compile Include="Assets\scripts\paint_new.cs" />
      <None Include="Assets\Read_Me.txt" />
      <None Include="Assets\Installation Guide.txt" />
      <None Include="Assets\StreamingAssets\build_info.txt" />
@@ -72,10 +75,10 @@
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
  <Reference Include="System.Drawing">
- <HintPath>D:/mrp/falcon_test/Assets/plugins/System.Drawing.dll</HintPath>
+ <HintPath>C:/Users/MDMStudent/Documents/GitHub/mrp/falcon_test/Assets/plugins/System.Drawing.dll</HintPath>
  </Reference>
  <Reference Include="System.Windows.Forms">
- <HintPath>D:/mrp/falcon_test/Assets/plugins/System.Windows.Forms.dll</HintPath>
+ <HintPath>C:/Users/MDMStudent/Documents/GitHub/mrp/falcon_test/Assets/plugins/System.Windows.Forms.dll</HintPath>
  </Reference>
  <Reference Include="UnityEditor.iOS.Extensions.Xcode">
  <HintPath>C:/Program Files/Unity/Editor/Data/PlaybackEngines/iossupport/UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
