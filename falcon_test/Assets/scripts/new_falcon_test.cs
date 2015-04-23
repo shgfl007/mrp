@@ -5,27 +5,14 @@ using System.Reflection;
 using System.IO;
 using UnityEngine.UI;
 
-/// <summary>
-/// NovintFalconã‚’æ“ä½œãƒ‡ãƒã‚¤ã‚¹ã¨ã—ã¦ä½¿ã†script â€»Windowsç”¨ï¼ˆdllä¾å­˜ï¼‰
-///
-/// usage:
-///  1. http://forum.unity3d.com/threads/6494-Novint-falcon ã‹ã‚‰
-///     Falcon Wrapper Source - Update V1.zip ã‚’DLã€FalconWrapper.dllã‚’Assetsã¨åŒéšŽå±¤ã¸ã‚³ãƒ”ãƒ¼
-///     ãƒ“ãƒ«ãƒ‰å¾Œã¯Windowsã®PathãŒé€šã£ã¦ã„ã‚‹ã¨ã“ã‚ã«FalconWrapper.dllã‚’ç½®ãã‹ã€ãƒã‚¤ãƒŠãƒªã¨åŒéšŽå±¤ã«ç½®ã
-///  2. ã“ã®ã‚¹ã‚¯ãƒªãƒ—ãƒˆã‚’ãƒ—ãƒ­ã‚¸ã‚§ã‚¯ãƒˆã¸In
-///  3. æ“ä½œã—ãŸã„å¯¾è±¡ã®GameObjectã«Add Component
-///  4. Inspectorã§é©å½“ã«å¼„ã£ã¦å¯Ÿã™ã‚‹
-/// â€»å¯¾è±¡ã®å‹•ãã‚’NovintFalconã¸Hapticã™ã‚‹æ–¹æ³•ã¯_feedbackå‚ç…§
-///
-/// NovintFalconã®æ­£ã—ã„ä½¿ã„æ–¹ - Unity Advent Calendar 2013 vol.23
-/// http://yunojy.github.io/blog/2013/12/23/how-to-use-novintfalcon-unity-advent-calendar-2013-vol-dot-23/
-/// </summary>
+
 public class new_falcon_test : MonoBehaviour {
 	
 	#region wrapper Variables
 	
-	const string falcon = "Falcon_Wrapper_new.dll";
-	
+	//const string falcon = "Falcon_Wrapper_new.dll";
+	const string falcon = "Falcon Wrapper_test1.dll";
+
 	[DllImport(falcon)]
 	private static extern void StartHaptics();
 	[DllImport(falcon)]
@@ -35,11 +22,11 @@ public class new_falcon_test : MonoBehaviour {
 	[DllImport(falcon)]
 	private static extern bool IsDeviceReady();
 	[DllImport(falcon)]
-	private static extern double GetXPos();
+	public static extern double GetXPos();
 	[DllImport(falcon)]
-	private static extern double GetYPos();
+	public static extern double GetYPos();
 	[DllImport(falcon)]
-	private static extern double GetZPos();
+	public static extern double GetZPos();
 	[DllImport(falcon)]
 	private static extern void SetServo(double[] speed);
 	[DllImport(falcon)]
@@ -49,7 +36,7 @@ public class new_falcon_test : MonoBehaviour {
 	[DllImport(falcon)]
 	private static extern int GetButtonsDown();
 	[DllImport(falcon)]
-	private static extern bool isButton0Down();
+	public static extern bool isButton0Down();
 	[DllImport(falcon)]
 	private static extern bool isButton1Down();
 	[DllImport(falcon)]
@@ -117,21 +104,23 @@ public class new_falcon_test : MonoBehaviour {
 	#region Update()
 	
 	void Update() {
-		// ãƒ‡ãƒã‚¤ã‚¹å‹•ä½œåˆ¶å¾¡
+
 		_feedback();
-		// ã‚­ãƒ£ãƒ©ã‚¯ã‚¿ãƒ¼å‹•ä½œåˆ¶å¾¡
+
 		_charaMove();
-		
+
+		float smoothTime = 0.3f;
+		float velocity = 0.0f;
 		//gameObject.transform.position = new Vector3((float)GetXPos() * -2, (float)GetYPos() * 2, (float)GetZPos() * 2);
-		if (Strength != 0f)
-			Strength = Strength - 1f;
+		if (Strength != 0f) {
+			Strength--;
+			//Strength = Mathf.SmoothDamp(Strength, 0f, ref velocity,smoothTime);
+		}
 		//Debug.Log(isButton0Down() + " , " + isButton1Down() + " , " + isButton2Down() + " , " + isButton3Down());
 		//Debug.Log ("strength is " +Strength);
 	}
 
-	/// <summary>
-	/// ãƒ‡ãƒã‚¤ã‚¹å‹•ä½œåˆ¶å¾¡
-	/// </summary>
+
 	private void _feedback() {
 		// NovintFalconã®ã‚°ãƒªãƒƒãƒ—ã‚’ãƒ‡ãƒ•ã‚©ä½ç½®ã«æˆ»ã™
 		//		if (temp_strength != 3f && isFirsthit) {
@@ -145,8 +134,9 @@ public class new_falcon_test : MonoBehaviour {
 		}
 		SetServo(new double[3] { SpeedX, SpeedY, SpeedZ });
 		//SetServoPos(new double[3] { PosX, PosY, PosZ }, Strength);
-		//SetServoPos(new double[3] { GetServoPos().x, GetServoPos().y, GetServoPos().z }, Strength);
+		//SetServoPos(new double[3] { GetServoPos().x, GetServoPos().y, GetServoPos().z }, 0f);
 		SetForce (norm, Strength);
+
 		normText.text = norm[0].ToString()+ "," + norm[1].ToString() + "," + norm[2].ToString();
 	}
 	
@@ -166,7 +156,7 @@ public class new_falcon_test : MonoBehaviour {
 			//***** check the logic here!!! might be something wrong with the 
 			if(isFirsthit)		//if it is first time hit, change the strength
 			{
-				temp_strength = 10f;
+				temp_strength = 5f;
 				isFirsthit = false;
 				ContactPoint contact = col.contacts[0];
 				norm[0] = contact.normal.x;
@@ -174,11 +164,7 @@ public class new_falcon_test : MonoBehaviour {
 				norm[2] = contact.normal.z;
 			}else			//if it is not... dump!
 			{
-				//				for(int i = 0; i < 100; i++)
-				//				{
-				//					//do nothing!!
-				//					Debug.Log("waiting....." + i);
-				//				}
+ 
 				if(Strength == 0f)
 				{
 					isFirsthit = true; //change state
@@ -186,9 +172,6 @@ public class new_falcon_test : MonoBehaviour {
 
 				}
 			}
-			//Destroy(col.gameObject);
-			//Rigidbody rb = obj.GetComponent<Rigidbody>();
-			//rb.isKinematic = true;
 		}
 	}
 	
@@ -236,7 +219,7 @@ public class new_falcon_test : MonoBehaviour {
 	void OnApplicationQuit() {
 		StopHaptics();
 	}
-	public Vector3 GetServoPos() {
+	Vector3 GetServoPos() {
 		return new Vector3((float)GetXPos(), (float)GetYPos(), -(float)GetZPos());
 	}
 	

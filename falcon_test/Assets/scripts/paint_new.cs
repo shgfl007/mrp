@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class paint_new : MonoBehaviour {
 
@@ -7,13 +8,17 @@ public class paint_new : MonoBehaviour {
 	public float pull= 10.0f;
 	private MeshFilter unappliedMesh;
 
-	enum FallOff { Gauss, Linear, Needle }
+	public enum FallOff { Gauss, Linear, Needle }
 	private int fallOff= (int)FallOff.Gauss;
 	private float sqrMagnitude;
 	private float distance;
 	private float falloff;
 	private Ray ray;
 	private RaycastHit hit;
+	public Text debug;
+	public Text mouse_debug;
+	public Text map_debug;
+
 	static float  LinearFalloff ( float distance  ,   float inRadius  ){
 		return Mathf.Clamp01(1.0f - distance / inRadius);
 	}
@@ -77,11 +82,18 @@ public class paint_new : MonoBehaviour {
 	}
 	
 	void  Update (){
-		
+		debug.text = "falcon position is " + GetServoPos ().ToString ();
+		map_debug.text = "mapped falcon position is " + FalconToMouse (GetServoPos ()).ToString(); 
+		mouse_debug.text = Input.mousePosition.ToString ();
 		// When no button is pressed we update the mesh collider
-		if (!Input.GetMouseButton (0))
-		{
-			// Apply collision mesh when we let go of button
+//		if (!Input.GetMouseButton (0))
+//		{
+//			// Apply collision mesh when we let go of button
+//			ApplyMeshCollider();
+//			return;
+//		}
+		//debug.text = new_falcon_test.isButton0Down ().ToString();
+		if (!new_falcon_test.isButton0Down()) {
 			ApplyMeshCollider();
 			return;
 		}
@@ -89,7 +101,10 @@ public class paint_new : MonoBehaviour {
 		
 		// Did we hit the surface?
 		//RaycastHit hit;
-		ray= Camera.main.ScreenPointToRay(Input.mousePosition);
+		//ray= Camera.main.ScreenPointToRay(Input.mousePosition);
+		//debug.text = GetServoPos ().ToString ();
+		ray = Camera.main.ScreenPointToRay (FalconToMouse(GetServoPos()));
+		//debug.text = ray.ToString ();
 		if (Physics.Raycast (ray,out hit, Mathf.Infinity))
 		{
 			MeshFilter filter = hit.collider.GetComponent<MeshFilter>();
@@ -118,5 +133,28 @@ public class paint_new : MonoBehaviour {
 		}
 		unappliedMesh = null;
 	}
-	void  Test (){}
+	//void  Test (){}
+
+	Vector3 GetServoPos() {
+		return new Vector3((float)new_falcon_test.GetXPos(), (float)new_falcon_test.GetYPos(), -(float)new_falcon_test.GetZPos());
+	}
+
+	Vector3 FalconToMouse(Vector3 position)
+	{
+		float height = (float)Screen.height;
+		float width = (float)Screen.width;
+
+		float min = -1.8f;
+		float max = 1.8f;
+
+		float old_range = max - min;
+		float new_x = ((position.x - min) * width) / old_range;
+		float new_y = ((position.y - min) * height) / old_range;
+		float new_z = ((position.z - min) * 8f) / old_range;
+
+		//float new_x = Mathf.Lerp (0f, width, position.x);
+
+		return new Vector3 (new_x, new_y, 0f);
+
+	}
 }

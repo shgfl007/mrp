@@ -161,7 +161,7 @@ public class falcon_test : MonoBehaviour {
 			//***** check the logic here!!! might be something wrong with the 
 			if(isFirsthit)		//if it is first time hit, change the strength
 			{
-				temp_strength = 10f;
+				//temp_strength = 10f;
 				isFirsthit = false;
 			}else			//if it is not... dump!
 			{
@@ -189,7 +189,7 @@ public class falcon_test : MonoBehaviour {
 			}
 			if(isFirsthit)		//if it is first time hit, change the strength
 			{
-				temp_strength = 20f;
+				//temp_strength = 10f;
 				isFirsthit = false;
 			}else			//if it is not... dump!
 			{
