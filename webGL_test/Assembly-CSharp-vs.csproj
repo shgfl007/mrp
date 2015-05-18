@@ -55,6 +55,7 @@
      <Compile Include="Assets\LeapScripts\LeapDebugCamera.cs" />
      <Compile Include="Assets\LeapScripts\LeapManager.cs" />
      <Compile Include="Assets\Scripts\camera_manager.cs" />
+     <Compile Include="Assets\Scripts\onCollision.cs" />
      <Compile Include="Assets\Scripts\switch_controller.cs" />
      <Compile Include="Assets\Scripts\trans_camera.cs" />
      <Compile Include="Assets\switch_sphere.cs" />

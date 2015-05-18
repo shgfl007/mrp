@@ -1,12 +1,6 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/trans_camera.cs">
-    <Files>
-      <File FileName="Assets/Scripts/trans_camera.cs" Line="53" Column="46" />
-      <File FileName="Assets/Scripts/camera_manager.cs" Line="1" Column="1" />
-      <File FileName="Assets/switch_sphere.cs" Line="78" Column="4" />
-    </Files>
-  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workbench />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
