@@ -18,6 +18,9 @@ public class paint_new : MonoBehaviour {
 	public Text debug;
 	public Text mouse_debug;
 	public Text map_debug;
+	private Vector3 falcon_position;
+	private Vector3 current_position;
+	public Text pushPull;
 
 	static float  LinearFalloff ( float distance  ,   float inRadius  ){
 		return Mathf.Clamp01(1.0f - distance / inRadius);
@@ -73,7 +76,8 @@ public class paint_new : MonoBehaviour {
 				break;
 			}
 			
-			vertices[i] += averageNormal * falloff * power;
+			//vertices[i] += averageNormal * falloff * power;
+			vertices[i] += averageNormal * power * falloff ;
 		}
 		
 		mesh.vertices = vertices;
@@ -82,48 +86,79 @@ public class paint_new : MonoBehaviour {
 	}
 	
 	void  Update (){
+		//get the mapped position of falcon
+		falcon_position = FalconToMouse (GetServoPos());
+
 		debug.text = "falcon position is " + GetServoPos ().ToString ();
-		map_debug.text = "mapped falcon position is " + FalconToMouse (GetServoPos ()).ToString(); 
-		mouse_debug.text = Input.mousePosition.ToString ();
-		// When no button is pressed we update the mesh collider
-//		if (!Input.GetMouseButton (0))
-//		{
-//			// Apply collision mesh when we let go of button
-//			ApplyMeshCollider();
-//			return;
-//		}
-		//debug.text = new_falcon_test.isButton0Down ().ToString();
-		if (!new_falcon_test.isButton0Down()) {
+		//map_debug.text = "mapped falcon position is " + falcon_position.ToString(); 
+		//mouse_debug.text = Input.mousePosition.ToString ();
+
+		//-------- pull and push --------------
+		if (statemachine.pull) {
+			if(pull>0) //do nothing 
+				;
+			else
+				pull = -pull;
+		}
+		if (statemachine.push) {
+			if(pull>0)
+				//pull = -pull;
+				pull=-1f;
+			radius=1;
+		}
+		pushPull.text = pull.ToString ();
+
+		if (!statemachine.isSelected) {
 			ApplyMeshCollider();
 			return;
 		}
-		
-		
-		// Did we hit the surface?
-		//RaycastHit hit;
-		//ray= Camera.main.ScreenPointToRay(Input.mousePosition);
-		//debug.text = GetServoPos ().ToString ();
-		ray = Camera.main.ScreenPointToRay (FalconToMouse(GetServoPos()));
-		//debug.text = ray.ToString ();
-		if (Physics.Raycast (ray,out hit, Mathf.Infinity))
-		{
-			MeshFilter filter = hit.collider.GetComponent<MeshFilter>();
-			if (filter)
+		//---------------------------------------
+
+		if (statemachine.isSelected) {
+
+			MeshFilter filter = statemachine.hit.GetComponent<MeshFilter>();	
+			if (filter) 
 			{
-				// Don't update mesh collider every frame since physX
-				// does some heavy processing to optimize the collision mesh.
-				// So this is not fast enough for real time updating every frame
-				if (filter != unappliedMesh)
-				{
-					ApplyMeshCollider();
-					unappliedMesh = filter;
-				}
-				
-				// Deform mesh
-				Vector3 relativePoint= filter.transform.InverseTransformPoint(hit.point);
-				DeformMesh(filter.mesh, relativePoint, pull * Time.deltaTime, radius);
+					// Don't update mesh collider every frame since physX
+					// does some heavy processing to optimize the collision mesh.
+					// So this is not fast enough for real time updating every frame
+					if (filter != unappliedMesh)
+					{
+						ApplyMeshCollider();
+						unappliedMesh = filter;
+					}
+					
+					// Deform mesh
+					//Vector3 relativePoint= filter.transform.InverseTransformPoint(hit.point);
+					current_position = new Vector3((float)falcon_statemachine.GetXPos(), (float)falcon_statemachine.GetYPos(), (float)falcon_statemachine.GetZPos());
+//					Ray ray = new Ray(current_position,GetDirection(current_position, statemachine.hit.gameObject.GetComponent<Renderer>().bounds.center));
+					Ray ray = new Ray(current_position,GetDirection(current_position, statemachine.start_point));
+
+					RaycastHit hitObj;
+					if(Physics.Raycast(ray, out hitObj, Mathf.Infinity))
+					{
+						Debug.Log ("hit!!!!!!!!!!");
+						mouse_debug.text = "hitobj hit point is " + hitObj.point.ToString();
+						map_debug.text = "start point is " + statemachine.start_point.ToString();
+					}
+					//Vector3 relativePoint= filter.transform.InverseTransformPoint(current_position);
+					//Vector3 relativePoint= filter.transform.InverseTransformPoint(falcon_position);
+					//Vector3 relativePoint= filter.transform.InverseTransformPoint(hitObj.point);
+				Vector3 relativePoint= filter.transform.InverseTransformPoint(statemachine.start_point);
+				//DeformMesh(filter.mesh, relativePoint, pull * Time.deltaTime, radius);
+				float dis = Vector3.Distance(statemachine.start_point, current_position);
+				debug.text = "distance is " + dis;
+				dis = dis/10;
+				DeformMesh(filter.mesh, relativePoint, dis, radius);
+				float r = Vector3.Distance(statemachine.start_point,current_position);
+				r = Mathf.Sqrt(r);
+					//DeformMesh(filter.mesh, relativePoint, r, radius);
+					//DeformMesh(filter.mesh, current_position, pull * Time.deltaTime, radius);
 			}
+			//}
 		}
+		
+
 	}
 	
 	void  ApplyMeshCollider (){
@@ -144,8 +179,8 @@ public class paint_new : MonoBehaviour {
 		float height = (float)Screen.height;
 		float width = (float)Screen.width;
 
-		float min = -1.8f;
-		float max = 1.8f;
+		float min = -2f;
+		float max = 2f;
 
 		float old_range = max - min;
 		float new_x = ((position.x - min) * width) / old_range;
@@ -154,7 +189,17 @@ public class paint_new : MonoBehaviour {
 
 		//float new_x = Mathf.Lerp (0f, width, position.x);
 
-		return new Vector3 (new_x, new_y, 0f);
+		return new Vector3 (new_x, new_y, new_z);
 
+	}
+
+	Vector3 GetDirection(Vector3 from, Vector3 to){
+		Vector3 dir;
+		Vector3 temp = to - from;
+		float distance = temp.magnitude;
+		dir = temp / distance;
+		//dir = (to - from).normalized;
+
+		return dir;
 	}
 }

@@ -33,18 +33,20 @@ public class falcon_statemachine : MonoBehaviour {
 	[DllImport(falcon)]
 	private static extern bool IsHapticButtonDepressed();
 	[DllImport(falcon)]
-	private static extern int GetButtonsDown();
+	public static extern int GetButtonsDown();
 	[DllImport(falcon)]
 	public static extern bool isButton0Down();
 	[DllImport(falcon)]
-	private static extern bool isButton1Down();
+	public static extern bool isButton1Down();
 	[DllImport(falcon)]
-	private static extern bool isButton2Down();
+	public static extern bool isButton2Down();
 	[DllImport(falcon)]
-	private static extern bool isButton3Down();
+	public static extern bool isButton3Down();
 	[DllImport(falcon)]
 	private static extern void SetForce(double[] norm, double strength);
-	
+
+	public float stiffness;
+
 	public static falcon_statemachine main;
 	#endregion
 	
@@ -73,6 +75,7 @@ public class falcon_statemachine : MonoBehaviour {
 	public Text debugTxt;
 	public Text normText;
 	private double[] norm = new double[3];
+
 	#endregion
 	
 	
@@ -83,6 +86,7 @@ public class falcon_statemachine : MonoBehaviour {
 	void Start() {
 		StartHaptics();
 		StartCoroutine(_initHaptics());
+		stiffness = 3f;
 		
 	}
 	
@@ -103,28 +107,31 @@ public class falcon_statemachine : MonoBehaviour {
 	
 	void Update() {
 
-		if (statemachine.state == 0)
-			Strength = 1f;
+		if (statemachine.state == 0 && Strength>1f)
+			Strength--;
 		else if (statemachine.state == 1) {
 			Strength = 5f;
 			norm[0] = statemachine.norm.x;
 			norm[1] = statemachine.norm.y;
 			norm[2] = statemachine.norm.z;
 		}
+
+		if (statemachine.isSelected) {
+			Strength = stiffness;
+			Vector3 temp = statemachine.start_point - GetServoPos();
+			float scale = Vector3.Distance(statemachine.start_point, GetServoPos());
+			temp = temp/scale;
+			norm[0] = -temp.x;
+			norm[1] = temp.y;
+			norm[2] = -temp.z;
+		}
+
 		debugTxt.text = "strength is " + Strength.ToString ();
 
 		_feedback();
 		
 		_charaMove();
-		
 
-		//gameObject.transform.position = new Vector3((float)GetXPos() * -2, (float)GetYPos() * 2, (float)GetZPos() * 2);
-		//if (Strength != 0f) {
-			//Strength--;
-			//Strength = Mathf.SmoothDamp(Strength, 0f, ref velocity,smoothTime);
-		//}
-		//Debug.Log(isButton0Down() + " , " + isButton1Down() + " , " + isButton2Down() + " , " + isButton3Down());
-		//Debug.Log ("strength is " +Strength);
 	}
 	
 	

@@ -56,6 +56,8 @@
      <Compile Include="Assets\Reporter\Test\TestReporter.cs" />
      <Compile Include="Assets\Sources\LightningBolt.cs" />
      <Compile Include="Assets\mouse_test.cs" />
+     <Compile Include="Assets\orbit.cs" />
+     <Compile Include="Assets\paint_cs.cs" />
      <Compile Include="Assets\scripts\DeviceNovintFalcon.cs" />
      <Compile Include="Assets\scripts\Haptics.cs" />
      <Compile Include="Assets\scripts\controll_falcon.cs" />
@@ -66,6 +68,7 @@
      <Compile Include="Assets\scripts\new_falcon_test.cs" />
      <Compile Include="Assets\scripts\paint_new.cs" />
      <Compile Include="Assets\scripts\statemachine.cs" />
+     <Compile Include="Assets\wireFrame.cs" />
      <None Include="Assets\Read_Me.txt" />
      <None Include="Assets\Installation Guide.txt" />
      <None Include="Assets\StreamingAssets\build_info.txt" />
