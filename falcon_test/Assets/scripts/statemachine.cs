@@ -24,7 +24,7 @@ public class statemachine : MonoBehaviour {
 		//initiate the state
 		state = 0;
 		isSelected = false;
-		//norm = new Vector3[3];
+		//norm = new Vector3[3]; 
 		offset = 0.2f;
 	}
 	
@@ -68,8 +68,8 @@ public class statemachine : MonoBehaviour {
 		}
 		if (falcon_statemachine.isButton0Down()) {
 			paint = true;
-
-			if(!isSelected )
+			;
+			if(!isSelected && col.gameObject.tag == "Sculpt_obj")
 			{
 				hit = col.collider;
 				isSelected = true;
@@ -93,8 +93,8 @@ public class statemachine : MonoBehaviour {
 			norm = col.contacts [0].normal;
 		if (falcon_statemachine.isButton0Down()) {
 			paint = true;
-			hit = col.collider;
-			if(!isSelected)
+			//hit = col.collider;
+			if(!isSelected && col.gameObject.tag == "Sculpt_obj")
 			{
 				hit = col.collider;
 				isSelected = true;

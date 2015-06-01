@@ -61,13 +61,22 @@
      <Compile Include="Assets\Sources\~ControlScripts\DragTransform.js" />
      <Compile Include="Assets\Sources\~ControlScripts\KeyboardOrbit.js" />
      <Compile Include="Assets\Sources\~ControlScripts\VPS.js" />
-     <None Include="Assets\Read_Me.txt" />
-     <None Include="Assets\Installation Guide.txt" />
-     <None Include="Assets\StreamingAssets\build_info.txt" />
-     <None Include="Assets\Standard Assets\CrossPlatformInput\CrossPlatformInputGuidelines.txt" />
-     <None Include="Assets\Standard Assets\Characters\ThirdPersonCharacter\ThirdPersonCharacterGuidelines.txt" />
+     <None Include="Assets\Noble Muffins\Muffin Shaders\Doublesided Lit (Two-Tex).shader" />
      <None Include="Assets\Standard Assets\Characters\FirstPersonCharacter\FirstPersonCharacterGuidelines.txt" />
+     <None Include="Assets\Noble Muffins\Muffin Shaders\Doublesided Lit (One-Tex).shader" />
+     <None Include="Assets\Standard Assets\Characters\ThirdPersonCharacter\ThirdPersonCharacterGuidelines.txt" />
+     <None Include="Assets\Read_Me.txt" />
+     <None Include="Assets\Noble Muffins\Muffin Shaders\Doublesided (Two-Tex).shader" />
+     <None Include="Assets\Standard Assets\CrossPlatformInput\CrossPlatformInputGuidelines.txt" />
+     <None Include="Assets\Installation Guide.txt" />
+     <None Include="Assets\Noble Muffins\Muffin Shaders\Doublesided (One-Tex).shader" />
+     <None Include="Assets\Noble Muffins\Demos.txt" />
+     <None Include="Assets\StreamingAssets\build_info.txt" />
+     <None Include="Assets\scripts\Standard Assets\CrossPlatformInput\CrossPlatformInputGuidelines.txt" />
      <None Include="Assets\Standard Assets\Characters\RollerBall\RollerBallGuidelines.txt" />
+     <None Include="Assets\scripts\Standard Assets\Characters\ThirdPersonCharacter\ThirdPersonCharacterGuidelines.txt" />
+     <None Include="Assets\scripts\Standard Assets\Characters\FirstPersonCharacter\FirstPersonCharacterGuidelines.txt" />
+     <None Include="Assets\scripts\Standard Assets\Characters\RollerBall\RollerBallGuidelines.txt" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>

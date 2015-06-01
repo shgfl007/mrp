@@ -1,13 +1,9 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\wireFrame.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Noble Muffins\Demos.txt">
     <Files>
-      <File FileName="Assets\scripts\falcon_statemachine.cs" Line="126" Column="15" />
-      <File FileName="Assets\scripts\statemachine.cs" Line="1" Column="1" />
-      <File FileName="Assets\scripts\paint_new.cs" Line="151" Column="16" />
-      <File FileName="Assets\orbit.cs" Line="1" Column="1" />
-      <File FileName="Assets\paint_cs.cs" Line="1" Column="1" />
-      <File FileName="Assets\wireFrame.cs" Line="15" Column="21" />
+      <File FileName="Assets\switch_level.cs" Line="26" Column="29" />
+      <File FileName="Assets\Noble Muffins\Demos.txt" Line="5" Column="51" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

@@ -45,7 +45,7 @@ public class falcon_statemachine : MonoBehaviour {
 	[DllImport(falcon)]
 	private static extern void SetForce(double[] norm, double strength);
 
-	public float stiffness;
+	public static float stiffness;
 
 	public static falcon_statemachine main;
 	#endregion
@@ -72,9 +72,11 @@ public class falcon_statemachine : MonoBehaviour {
 	public float TranslationSensitivity     = 10.0f;
 	public GameObject obj;
 
+	public bool callPopupWindow;
 	public Text debugTxt;
 	public Text normText;
 	private double[] norm = new double[3];
+	public Rect windowRect = new Rect(500,300,120,50);
 
 	#endregion
 	
@@ -87,19 +89,34 @@ public class falcon_statemachine : MonoBehaviour {
 		StartHaptics();
 		StartCoroutine(_initHaptics());
 		stiffness = 3f;
-		
+
 	}
 	
 	private IEnumerator _initHaptics() {
 		while (!IsDeviceCalibrated()) {
 			Debug.LogWarning("Please calibrate the device!");
+			callPopupWindow = true;
 			yield return new WaitForSeconds(1.5f);
 		}
+		if (IsDeviceReady ())
+			callPopupWindow = false;
 		if (!IsDeviceReady())
 			Debug.LogError("Device is not ready!");
 		main = this;
 	}
-	
+
+	void OnGUI(){
+		if (callPopupWindow) {
+			windowRect = GUI.Window(0, windowRect, DoMyWindow, "Please calibrate the device!");
+		}
+	}
+
+	void DoMyWindow(int windowID){
+		if (GUI.Button (new Rect (50, 50, 100, 20), "ok")) {
+			print ("Got a click");
+			callPopupWindow = false;
+		}
+	}
 	#endregion
 	
 	//-------------------------------------------------
@@ -118,12 +135,14 @@ public class falcon_statemachine : MonoBehaviour {
 
 		if (statemachine.isSelected) {
 			Strength = stiffness;
-			Vector3 temp = statemachine.start_point - GetServoPos();
+			//get the direction of the user's movement
+			//direction = (to-from)/distance
+			Vector3 temp = GetServoPos() - statemachine.start_point;
 			float scale = Vector3.Distance(statemachine.start_point, GetServoPos());
 			temp = temp/scale;
-			norm[0] = -temp.x;
+			norm[0] = temp.x;
 			norm[1] = temp.y;
-			norm[2] = -temp.z;
+			norm[2] = temp.z;
 		}
 
 		debugTxt.text = "strength is " + Strength.ToString ();

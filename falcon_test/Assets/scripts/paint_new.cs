@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 public class paint_new : MonoBehaviour {
 
-	public float radius= 1.0f;
+	public float radius;
 	public float pull= 10.0f;
 	private MeshFilter unappliedMesh;
 
@@ -21,6 +21,7 @@ public class paint_new : MonoBehaviour {
 	private Vector3 falcon_position;
 	private Vector3 current_position;
 	public Text pushPull;
+	private bool isSculptable;
 
 	static float  LinearFalloff ( float distance  ,   float inRadius  ){
 		return Mathf.Clamp01(1.0f - distance / inRadius);
@@ -84,7 +85,7 @@ public class paint_new : MonoBehaviour {
 		mesh.RecalculateNormals();
 		mesh.RecalculateBounds();
 	}
-	
+
 	void  Update (){
 		//get the mapped position of falcon
 		falcon_position = FalconToMouse (GetServoPos());
@@ -93,18 +94,21 @@ public class paint_new : MonoBehaviour {
 		//map_debug.text = "mapped falcon position is " + falcon_position.ToString(); 
 		//mouse_debug.text = Input.mousePosition.ToString ();
 
+
+
 		//-------- pull and push --------------
 		if (statemachine.pull) {
-			if(pull>0) //do nothing 
-				;
-			else
-				pull = -pull;
+//			if(pull>0) //do nothing 
+//				;
+//			else
+//				pull = -pull;
+			pull = 1;
 		}
 		if (statemachine.push) {
-			if(pull>0)
+			if(pull>0) pull = -1;
 				//pull = -pull;
-				pull=-1f;
-			radius=1;
+				//pull=-1f;
+			//radius=1;
 		}
 		pushPull.text = pull.ToString ();
 
@@ -140,6 +144,18 @@ public class paint_new : MonoBehaviour {
 						Debug.Log ("hit!!!!!!!!!!");
 						mouse_debug.text = "hitobj hit point is " + hitObj.point.ToString();
 						map_debug.text = "start point is " + statemachine.start_point.ToString();
+						MeshCollider temp = (MeshCollider)hitObj.collider;
+						pushPull.text = "material is " + temp.material.name;
+						if(temp.material.name.Contains("clay")) 
+						{
+							radius = 0.5f;//dis = dis/10f;
+							falcon_statemachine.stiffness = 3f;
+						}
+						else if(temp.material.name.Contains("stone")) 
+						{
+							radius = 0.2f;//dis = dis/15f;
+						falcon_statemachine.stiffness = 5f;
+						}
 					}
 					//Vector3 relativePoint= filter.transform.InverseTransformPoint(current_position);
 					//Vector3 relativePoint= filter.transform.InverseTransformPoint(falcon_position);
@@ -147,8 +163,10 @@ public class paint_new : MonoBehaviour {
 				Vector3 relativePoint= filter.transform.InverseTransformPoint(statemachine.start_point);
 				//DeformMesh(filter.mesh, relativePoint, pull * Time.deltaTime, radius);
 				float dis = Vector3.Distance(statemachine.start_point, current_position);
-				debug.text = "distance is " + dis;
-				dis = dis/10;
+				debug.text = "r is " + radius.ToString();
+
+
+				dis = dis*pull/10f;
 				DeformMesh(filter.mesh, relativePoint, dis, radius);
 				float r = Vector3.Distance(statemachine.start_point,current_position);
 				r = Mathf.Sqrt(r);
