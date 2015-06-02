@@ -113,12 +113,6 @@ public class statemachine : MonoBehaviour {
 			state = 0;
 			//debug.text = "exit function called";
 		}
-		//Debug.Log ("exit function called");
-//		if (!falcon_statemachine.isButton0Down ()) {
-//			//button released
-//			isSelected = false;
-//		}
-//		paint = false;
-//		hit = null;
+
 	}
 }

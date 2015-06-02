@@ -23,6 +23,12 @@ public class paint_new : MonoBehaviour {
 	public Text pushPull;
 	private bool isSculptable;
 
+	//tool set index number
+	private int toolNum;
+	private int hand;
+	private int spatulas;
+	private int cutter;
+
 	static float  LinearFalloff ( float distance  ,   float inRadius  ){
 		return Mathf.Clamp01(1.0f - distance / inRadius);
 	}
@@ -85,7 +91,11 @@ public class paint_new : MonoBehaviour {
 		mesh.RecalculateNormals();
 		mesh.RecalculateBounds();
 	}
-
+	void Start(){
+		hand = 0;
+		spatulas = 1;
+		cutter = 2;
+	}
 	void  Update (){
 		//get the mapped position of falcon
 		falcon_position = FalconToMouse (GetServoPos());
@@ -94,24 +104,36 @@ public class paint_new : MonoBehaviour {
 		//map_debug.text = "mapped falcon position is " + falcon_position.ToString(); 
 		//mouse_debug.text = Input.mousePosition.ToString ();
 
+		toolNum = change_tools.toolNum;
 
-
-		//-------- pull and push --------------
-		if (statemachine.pull) {
-//			if(pull>0) //do nothing 
-//				;
-//			else
-//				pull = -pull;
-			pull = 1;
-		}
-		if (statemachine.push) {
-			if(pull>0) pull = -1;
-				//pull = -pull;
+		//only worry about push and pull when tool is hand
+		if (toolNum == hand) {
+			//-------- pull and push --------------
+			if (statemachine.pull) {
+				if (pull > 0) //do nothing 
+					;
+				else
+					pull = -pull;
+				//pull = 1;
+			}
+			if (statemachine.push) {
+				if (pull > 0)
+					//pull = -1;
+					pull = -pull;
 				//pull=-1f;
-			//radius=1;
+				//radius=1;
+			}
+			pushPull.text = pull.ToString ();
+		} else if (toolNum == spatulas) {
+			if (pull > 0)
+				pull = -pull;
+			radius = 0.1f;
+			pushPull.text = "spatulas!";
+		} else if (toolNum == cutter) {
+			//no sculpting... pass it to cut
+			pushPull.text = "cutter!";
+			return;
 		}
-		pushPull.text = pull.ToString ();
-
 		if (!statemachine.isSelected) {
 			ApplyMeshCollider();
 			return;
@@ -141,7 +163,7 @@ public class paint_new : MonoBehaviour {
 					RaycastHit hitObj;
 					if(Physics.Raycast(ray, out hitObj, Mathf.Infinity))
 					{
-						Debug.Log ("hit!!!!!!!!!!");
+						
 						mouse_debug.text = "hitobj hit point is " + hitObj.point.ToString();
 						map_debug.text = "start point is " + statemachine.start_point.ToString();
 						MeshCollider temp = (MeshCollider)hitObj.collider;
