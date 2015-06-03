@@ -28,16 +28,19 @@ public class change_tools : MonoBehaviour {
 			controller.GetComponent<MeshFilter>().mesh = tools_list[0].GetComponent<MeshFilter>().mesh;
 			Debug.Log("change filter 1");
 			toolNum = 0;
+			isFunction.shouldFunction = false;
 		}
 		if (Input.GetKeyDown ("w")) {
 			controller.GetComponent<MeshFilter>().mesh = tools_list[1].GetComponent<MeshFilter>().mesh;
 			Debug.Log("change filter 2");
 			toolNum = 1;
+			isFunction.shouldFunction = true;
 		}
 		if (Input.GetKeyDown ("e")) {
 			controller.GetComponent<MeshFilter>().mesh = tools_list[2].GetComponent<MeshFilter>().mesh;
 			Debug.Log("change filter 3");
 			toolNum = 2;
+			isFunction.shouldFunction = false;
 		}
 
 		for(int i = 0; i < tools_list.Length; i++)

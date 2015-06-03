@@ -77,6 +77,9 @@
      <Compile Include="Assets\Reporter\Test\Rotate.cs" />
      <Compile Include="Assets\Reporter\Test\TestReporter.cs" />
      <Compile Include="Assets\Sources\LightningBolt.cs" />
+     <Compile Include="Assets\burstApart.cs" />
+     <Compile Include="Assets\follow_mouse.cs" />
+     <Compile Include="Assets\isFunction.cs" />
      <Compile Include="Assets\scripts\DeviceNovintFalcon.cs" />
      <Compile Include="Assets\scripts\Haptics.cs" />
      <Compile Include="Assets\scripts\Standard Assets\Characters\FirstPersonCharacter\Scripts\FirstPersonController.cs" />
