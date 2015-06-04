@@ -6,11 +6,12 @@ public class switch_sphere : MonoBehaviour {
 	private GameObject stone;
 	private GameObject clay;
 	private GameObject[] list;
+	private GameObject cut;
 
 	private int index;
 	// Use this for initialization
 	void Start () {
-		list = new GameObject[2];
+		list = new GameObject[3];
 
 		stone = GameObject.Find ("stone");
 		if (stone == null)
@@ -23,6 +24,12 @@ public class switch_sphere : MonoBehaviour {
 			print ("clay not found");
 		else
 			list [1] = clay;
+
+		clay = GameObject.Find ("cut");
+		if (clay == null)
+			print ("cut not found");
+		else
+			list [2] = clay;
 	}
 	
 	// Update is called once per frame
@@ -31,6 +38,8 @@ public class switch_sphere : MonoBehaviour {
 			index = 1;
 		if (Input.GetKeyDown ("2"))
 			index = 2;
+		if (Input.GetKeyDown ("3"))
+			index = 3;
 
 		if (index != 0)
 			switchSphere (index-1);

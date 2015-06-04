@@ -9,7 +9,7 @@ public class falcon_to_mouse : MonoBehaviour {
 	//falcon stuff
 	#region Falcon Wrapper.dll Variables
 	
-	const string falcon = "Falcon Wrapper.dll";
+	const string falcon = "Falcon Wrapper_test1.dll";
 	
 	[DllImport(falcon)]
 	private static extern void StartHaptics();
@@ -43,7 +43,7 @@ public class falcon_to_mouse : MonoBehaviour {
 	private static extern bool isButton3Down();
 	
 	public static falcon_to_mouse main;
-
+	//public static Vector3 FalconToMouse (Vector3 position);
 	#endregion
 	
 	#region Variables
@@ -129,5 +129,24 @@ public class falcon_to_mouse : MonoBehaviour {
 		float newRange = newMax - newMin;
 		float newValue = (((value - OldMin) * newRange) / oldRange) + newMin;
 		return (newValue);
+	}
+
+	public static Vector3 FalconToMouse(Vector3 position)
+	{
+		float height = (float)Screen.height;
+		float width = (float)Screen.width;
+		
+		float min = -2f;
+		float max = 2f;
+		
+		float old_range = max - min;
+		float new_x = ((position.x - min) * width) / old_range;
+		float new_y = ((position.y - min) * height) / old_range;
+		float new_z = ((position.z - min) * 8f) / old_range;
+		
+		//float new_x = Mathf.Lerp (0f, width, position.x);
+		
+		return new Vector3 (new_x, new_y, new_z);
+		
 	}
 }

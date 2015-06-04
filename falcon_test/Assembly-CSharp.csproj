@@ -78,6 +78,7 @@
      <Compile Include="Assets\Reporter\Test\TestReporter.cs" />
      <Compile Include="Assets\Sources\LightningBolt.cs" />
      <Compile Include="Assets\burstApart.cs" />
+     <Compile Include="Assets\falcon_control.cs" />
      <Compile Include="Assets\follow_mouse.cs" />
      <Compile Include="Assets\isFunction.cs" />
      <Compile Include="Assets\scripts\DeviceNovintFalcon.cs" />

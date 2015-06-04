@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+﻿ using UnityEngine;
 using System.Collections;
 
 public class follow_mouse : MonoBehaviour {
@@ -36,8 +36,9 @@ public class follow_mouse : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		Vector3 mousePosition = Input.mousePosition;
-
+		//Vector3 mousePosition = Input.mousePosition;
+		Vector3 falcon_position = new Vector3 ((float)falcon_statemachine.GetXPos (), (float)falcon_statemachine.GetYPos (), (float)falcon_statemachine.GetZPos ());
+		Vector3 mousePosition = falcon_to_mouse.FalconToMouse (falcon_position);
 		Vector3 mouseDelta = previousMousePosition - mousePosition;
 
 		if (mouseDelta.magnitude > deadzone) {

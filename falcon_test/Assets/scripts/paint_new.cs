@@ -29,6 +29,9 @@ public class paint_new : MonoBehaviour {
 	private int spatulas;
 	private int cutter;
 
+	private GameObject controller;
+	private GameObject cutter_controller;
+
 	static float  LinearFalloff ( float distance  ,   float inRadius  ){
 		return Mathf.Clamp01(1.0f - distance / inRadius);
 	}
@@ -95,6 +98,8 @@ public class paint_new : MonoBehaviour {
 		hand = 0;
 		spatulas = 1;
 		cutter = 2;
+		controller = GameObject.Find ("controller");
+		cutter_controller = GameObject.Find ("Cutter");
 	}
 	void  Update (){
 		//get the mapped position of falcon
@@ -124,14 +129,20 @@ public class paint_new : MonoBehaviour {
 				//radius=1;
 			}
 			pushPull.text = pull.ToString ();
+//			cutter_controller.SetActive(false);
+//			controller.SetActive(true);
 		} else if (toolNum == spatulas) {
 			if (pull > 0)
 				pull = -pull;
 			radius = 0.1f;
+//			cutter_controller.SetActive(false);
+//			controller.SetActive(true);
 			pushPull.text = "spatulas!";
 		} else if (toolNum == cutter) {
 			//no sculpting... pass it to cut
 			pushPull.text = "cutter!";
+//			cutter_controller.SetActive(true);
+//			controller.SetActive(false);
 			return;
 		}
 		if (!statemachine.isSelected) {
