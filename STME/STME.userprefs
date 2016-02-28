@@ -1,8 +1,19 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace />
-  <MonoDevelop.Ide.Workbench ActiveDocument="../webGL_test/Assets/Scripts/PaintVertices.js">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\scripts\S3_eventControl.cs">
     <Files>
-      <File FileName="../webGL_test/Assets/Scripts/PaintVertices.js" Line="112" Column="2" />
+      <File FileName="Assets\scripts\combine_mesh_click.cs" Line="55" Column="22" />
+      <File FileName="Assets\scripts\paint_new.cs" Line="286" Column="21" />
+      <File FileName="Assets\scripts\falcon_sculpt.cs" Line="1" Column="1" />
+      <File FileName="Assets\scripts\isFunction.cs" Line="40" Column="35" />
+      <File FileName="Assets\scripts\S3_eventControl.cs" Line="162" Column="37" />
+      <File FileName="Assets\scripts\change_tools.cs" Line="1" Column="1" />
+      <File FileName="Assets\scripts\changeT_Collide.cs" Line="1" Column="1" />
+      <File FileName="Assets\scripts\pivotSpaculas.cs" Line="1" Column="1" />
+      <File FileName="Assets\scripts\switch_sphere.cs" Line="1" Column="1" />
+      <File FileName="Assets\move_character.cs" Line="1" Column="1" />
+      <File FileName="Assets\OVR\Scripts\Util\OVRPlayerController.cs" Line="1" Column="1" />
+      <File FileName="Assets\scripts\Dialogue_s3.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

@@ -1,0 +1,102 @@
+[dhdDelta():16.02.03.0002] - Did not find FalconCommon.txt
+[dhdComUSB::dhdComUSB():16.02.03.0003] - Constructor
+[dhdDelta():16.02.03.0004] - Did not find FalconCommon.txt
+[dhdComUSB::dhdComUSB():16.02.03.0004] - Constructor
+[dhdDelta():16.02.03.0005] - Did not find FalconCommon.txt
+[dhdComUSB::dhdComUSB():16.02.03.0005] - Constructor
+[dhdDelta():16.02.03.0005] - Did not find FalconCommon.txt
+[dhdComUSB::dhdComUSB():16.02.03.0005] - Constructor
+[dhdDelta():16.02.03.0006] - Did not find FalconCommon.txt
+[dhdComUSB::dhdComUSB():16.02.03.0006] - Constructor
+[dhdDelta():16.02.03.0007] - Did not find FalconCommon.txt
+[dhdComUSB::dhdComUSB():16.02.03.0007] - Constructor
+[dhdDelta():16.02.03.0007] - Did not find FalconCommon.txt
+[dhdComUSB::dhdComUSB():16.02.03.0008] - Constructor
+[dhdDelta():16.02.03.0008] - Did not find FalconCommon.txt
+[dhdComUSB::dhdComUSB():16.02.03.0008] - Constructor
+[dhdDelta():16.02.03.0009] - Did not find FalconCommon.txt
+[dhdComUSB::dhdComUSB():16.02.03.0009] - Constructor
+[dhdDelta():16.02.03.0009] - Did not find FalconCommon.txt
+[dhdComUSB::dhdComUSB():16.02.03.0010] - Constructor
+[dhdOpenWithReset():16.02.03.0012] - currentDevice = 0, l_serNum = , is NOT smart
+[dhdOpenWithReset():16.02.03.0178] - l_serNum after getFileName = 16000F85
+[dhdOpenWithReset():16.02.03.0179] - Found falcon_12_0101.bin at C:\Program Files (x86)\Novint\HDAL\bin\falcon_12_0101.bin
+[dhdOpenWithReset():16.02.03.0179] - comUSB[0]open(16000F85, C:\Program Files (x86)\Novint\HDAL\bin\falcon_12_0101.bin, False)
+[dhdComUSB::open():16.02.03.0179] - Open(C:\Program Files (x86)\Novint\HDAL\bin\falcon_12_0101.bin, false)
+[dhdComUSB::open():16.02.03.0187] - OpenUSBPort succeeded after 1 tries
+[dhdComUSB::open():16.02.03.0187] - deviceType = 0
+[dhdComUSB::open():16.02.03.0187] - deviceID   = 67357512d
+[dhdComUSB::open():16.02.03.0187] - deviceSN   = 16000F85
+[dhdComUSB::open():16.02.03.0188] - deviceDesc = FALCON HAPTIC
+[dhdComUSB::OpenDeviceCommunications():16.02.03.0188] - Set Baud Rate Status: 0
+[dhdComUSB::OpenDeviceCommunications():16.02.03.0493] - update() okay after 1 updates
+[dhdComUSB::OpenDeviceCommunications():16.02.03.0494] - Returning 0
+[dhdComUSB::changeGrip():16.02.03.2494] - New Grip: G_A
+[dhdComUSB::changeGrip():16.02.03.2495] - Started grip change
+[changeGripThreadFunc::16.02.03.2496] - deleting old grip object
+[changeGripThreadFunc::16.02.03.2496] - Loading grip type G_A
+[changeGripThreadFunc::16.02.03.2502] - Loading delta
+[dhdDelta():16.02.03.2503] - Did not find FalconCommon.txt
+[changeGripThreadFunc::16.02.03.2504] - Done loading new grip
+[dhdComUSB::processData():16.02.03.2878] - G_A
+[dhdComUSB::tryCalibration():16.02.03.4076] - HomeDisabled, LED Blue
+[dhdComUSB::processData():16.02.03.6726] - G_A
+[dhdComUSB::processData():16.03.32.9552] - G_A
+[dhdComUSB::processData():16.03.33.4548] - G_A
+[dhdComUSB::processData():16.03.33.9532] - G_A
+[dhdComUSB::processData():16.03.34.4536] - G_A
+[dhdComUSB::processData():16.03.37.4501] - G_A
+[dhdComUSB::processData():16.03.38.4498] - G_A
+[dhdComUSB::processData():16.03.38.9503] - G_A
+[dhdComUSB::processData():16.03.39.9499] - G_A
+[dhdComUSB::processData():16.03.40.4483] - G_A
+[dhdComUSB::processData():16.03.42.9472] - G_A
+[dhdComUSB::processData():16.03.43.4465] - G_A
+[dhdComUSB::processData():16.03.45.4449] - G_A
+[dhdComUSB::processData():16.03.45.9443] - G_A
+[dhdComUSB::processData():16.03.48.4415] - G_A
+[dhdComUSB::processData():16.03.49.4412] - G_A
+[dhdComUSB::processData():16.03.52.4395] - G_A
+[dhdComUSB::processData():16.03.53.4392] - G_A
+[dhdComUSB::processData():16.03.53.9376] - G_A
+[dhdComUSB::processData():16.03.54.4379] - G_A
+[dhdComUSB::processData():16.03.54.9363] - G_A
+[dhdComUSB::processData():16.03.58.9331] - G_A
+[dhdComUSB::processData():16.03.59.9329] - G_A
+[dhdComUSB::processData():16.04.01.4319] - G_A
+[dhdComUSB::processData():16.04.02.4316] - G_A
+[dhdComUSB::processData():16.04.02.9310] - G_A
+[dhdComUSB::processData():16.04.03.4293] - G_A
+[dhdComUSB::processData():16.04.03.9297] - G_A
+[dhdComUSB::processData():16.04.04.4290] - G_A
+[dhdComUSB::processData():16.04.04.9294] - G_A
+[dhdComUSB::processData():16.04.16.4205] - G_A
+[dhdComUSB::processData():16.04.16.9189] - G_A
+[dhdComUSB::processData():16.04.17.4195] - G_A
+[dhdComUSB::processData():16.04.17.9177] - G_A
+[dhdComUSB::processData():16.04.19.4177] - G_A
+[dhdComUSB::processData():16.04.20.4174] - G_A
+[dhdComUSB::processData():16.04.21.4161] - G_A
+[dhdComUSB::processData():16.04.21.9155] - G_A
+[dhdComUSB::processData():16.04.22.9153] - G_A
+[dhdComUSB::processData():16.04.23.4146] - G_A
+[dhdComUSB::processData():16.04.23.9150] - G_A
+[dhdComUSB::processData():16.04.24.4133] - G_A
+[dhdComUSB::processData():16.04.25.4121] - G_A
+[dhdComUSB::processData():16.04.25.9134] - G_A
+[dhdComUSB::processData():16.04.26.4118] - G_A
+[dhdComUSB::processData():16.04.26.9121] - G_A
+[dhdComUSB::processData():16.04.27.9118] - G_A
+[dhdComUSB::processData():16.04.28.4102] - G_A
+[dhdComUSB::processData():16.04.30.4086] - G_A
+[dhdComUSB::processData():16.04.30.9090] - G_A
+[dhdComUSB::processData():16.04.31.4073] - G_A
+[dhdComUSB::processData():16.04.31.9087] - G_A
+[dhdComUSB::processData():16.04.32.4080] - G_A
+[dhdComUSB::processData():16.04.32.9074] - G_A
+[dhdComUSB::processData():16.04.33.4068] - G_A
+[dhdComUSB::processData():16.04.33.9061] - G_A
+[dhdComUSB::processData():16.04.35.4052] - G_A
+[dhdComUSB::processData():16.04.35.9045] - G_A
+[dhdComUSB::dhdComUSB():16.14.41.5786] - Constructor
+[dhdComUSB::close():16.14.41.5786] - Closed

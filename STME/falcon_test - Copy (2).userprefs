@@ -1,0 +1,19 @@
+﻿<Properties>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\scripts\statemachine.cs">
+    <Files>
+      <File FileName="Assets\scripts\sketch_on_paper.cs" Line="30" Column="75" />
+      <File FileName="Assets\scripts\sketch_test.cs" Line="19" Column="4" />
+      <File FileName="Assets\scripts\falcon_sculpt.cs" Line="53" Column="3" />
+      <File FileName="Assets\S3_eventControl.cs" Line="88" Column="5" />
+      <File FileName="Assets\scripts\paint_new.cs" Line="292" Column="8" />
+      <File FileName="Assets\scripts\changeT_Collide.cs" Line="1" Column="1" />
+      <File FileName="Assets\scripts\change_tools.cs" Line="1" Column="1" />
+      <File FileName="Assets\scripts\statemachine.cs" Line="1" Column="1" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>

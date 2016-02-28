@@ -1,0 +1,31 @@
+Installation Guide:
+
+1) Missing .dll files:
+ There are supposed to be 2 .dll files in the Plugins folder , in case the .dll files are missing you can get them from
+ ...Unity/Editor/Data/Mono/lib/mono/2.0/ in your computer and then copy the files named "System.Windows.Forms.dll"
+, "System.Drawing.dll" and paste them inside the Plugins folder in your unity Project directory !!
+These 2 .dll files are vital and the asset will not work without them !
+
+1.1) If the files already exist:
+Do not change the location of the System.Drawing or System.Windows.Forms files located inside the Plugins folder.
+
+2) Api Compability Level:
+Open Unity and go to Edit -> Project Settings -> Player -> Other Settings -> Api Compability Level and set it to ".NET 2.0"
+
+3)Aplying Cursor Component
+Drag the "ScreenCursor" C# script located inside of Plugins folder and drop it on any form of gameobject inside your scene.
+
+3.1) Script Communication:
+If you dont already know, if you change the location of "ScreenCursor" C# script you wont be able to call any of the API above from any UnityScript !
+(Sometimes newest unity versions dont recognize the script so you may be limited on Csharp only unless you find another way around)
+
+4) Compressed format:
+If for any reason the asset doesnt work or there are more than the 2 .dll files missing try unzipping the .rar file
+,extract the unity package and import the assets as you would normally.
+
+Read the Read_Me file for more information
+
+Conctact Info :
+Email : DarknessBlade.Original@gmail.com
+Youtube : https://www.youtube.com/DarknessBladeOrigin
+Forum Thread: http://forum.unity3d.com/threads/242832-Official-Set-Cursor-Position?p=1606714#post1606714

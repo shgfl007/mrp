@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: ea5873cfd9158664f89459f0c9e1d853
+guid: d7f6628c4c75c54498009e509c3bf8bf
 TextureImporter:
   fileIDToRecycleName:
     21300000: SliderBackground
@@ -51,3 +51,4 @@ TextureImporter:
   spritePackingTag: 
   userData: 
   assetBundleName: 
+  assetBundleVariant: 

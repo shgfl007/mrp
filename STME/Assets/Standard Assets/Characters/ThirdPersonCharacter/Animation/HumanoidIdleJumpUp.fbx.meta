@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 0d9d26e2162aa4d11ab075b34c029673
+guid: ffc4c2246bc5fad48971cbca898bf1d8
 ModelImporter:
   serializedVersion: 18
   fileIDToRecycleName:
@@ -489,7 +489,6 @@ ModelImporter:
     bakeSimulation: 0
     optimizeGameObjects: 0
     motionNodeName: 
-    pivotNodeName: 
     animationCompression: 1
     animationRotationError: .5
     animationPositionError: .5
@@ -1502,6 +1501,7 @@ ModelImporter:
     generateSecondaryUV: 0
     useFileUnits: 1
     optimizeMeshForGPU: 1
+    keepQuads: 0
     weldVertices: 1
     secondaryUVAngleDistortion: 8
     secondaryUVAreaDistortion: 15.000001
@@ -2383,3 +2383,4 @@ ModelImporter:
   additionalBone: 0
   userData: 
   assetBundleName: 
+  assetBundleVariant: 

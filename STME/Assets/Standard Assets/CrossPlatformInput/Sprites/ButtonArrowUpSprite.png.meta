@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 4db017495c69e8140a56a0e2b669e3f8
+guid: b8dd4cd2dbd26b7408f8c827c58a8e14
 TextureImporter:
   fileIDToRecycleName: {}
   serializedVersion: 2
@@ -50,3 +50,4 @@ TextureImporter:
   spritePackingTag: 
   userData: 
   assetBundleName: 
+  assetBundleVariant: 
